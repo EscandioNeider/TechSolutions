@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title> 🔍 Busca CPF</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="navegação">
+                <li class="logo"><a href="index.html">TECHSOLUTIONS</a></li>
+                <li><a href="cep.html">CEP</a></li>
+                <li><a href="dolar.html">Dólar</a></li>
+                <li><a href="clima.html">Clima</a></li>
+                <li><a href="loja.html">E-Commerce</a></li>
+                <li><a href="tema.html">Estrelas</a></li>
+                <li><a href="cpf.html">CPF</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="divDados">
+        <h2>Busca CPF</h2>
+        <a href="https://github.com/EscandioNeider/TechSolutions/blob/main/README.md" target="_blank">
+            <p>Acesse o README e veja os CPF'S válidos.</p>
+        </a>        
+        
+        <div id="imagem"></div>
+        <div id="nome"></div>
+        <div id="sobrenome"></div>
+        <div id="cidade"></div>
+        <div id="pais"></div>
+        <div id="link" class="link"></div>
+    
+        <input class="caixa" type="text" id="valor" placeholder="Digite o CPF">
+        <div id="erro"></div>
+        <button onclick="buscar()">
+            <span class="transition"></span>
+            <span class="gradient"></span>
+            <span class="label">Buscar</span>
+        </button>
+    </div>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background-image: url(media/backCPF.gif);
+            background-size: cover; 
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: antiquewhite;
+        }
+
+        header {
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 45px;
+            background-color: #344956;
+            z-index: 1000;
+            padding: 0 10px;
+        }
+
+        .logo {
+            font-size: 20px;
+            position: absolute; 
+            left: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center; 
+            width: 100%;
+        }
+
+        .navegação {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center; 
+        }
+
+        .navegação li {
+            margin: 0 15px; /* Controle de espaço entre links */
+        }
+
+        .navegação li a {
+            text-decoration: none;
+            font-size: 1.25rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: #6f9dbd;
+        }
+
+        .navegação li a:hover {
+            background-color: #6f9dbd;
+            color: #393b41;
+            padding: 5px 10px;
+            border-radius: 0px;
+        }
+
+        .navegação li a:focus {
+            outline: 2px solid #6f9dbd; /* Adicionado para acessibilidade */
+            background-color: #393b41;
+            color: #6f9dbd;
+        }
+
+        a{
+            font-size: 11px;
+            color: #6f9dbd;
+            text-decoration: none;
+        }
+        
+        .divDados {
+            display: flex; 
+            flex-direction: column;  
+            flex-wrap: wrap; 
+            justify-content: center; 
+            align-items: center;  
+            height: 85vh; 
+            width: 40vw;  
+            border-radius: 15px;
+            padding: 20px;
+            background-color: rgba(84, 85, 100, 0.61);
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .caixa {
+            height: 6%;
+            background-color: #393b41;
+            color: aliceblue;
+        }
+
+        #link a {
+            color: lightblue; 
+            text-decoration: none; 
+        }
+
+        #link a:hover {
+            color: aliceblue; 
+            text-decoration: underline; 
+        }
+
+        #imagem, #nome, #sobrenome, #cidade, #pais, #link {
+            width: 100%;  
+            text-align: center; 
+            margin-bottom: 5px;
+        }
+
+        #valor {
+            display: block; 
+            margin: 10px auto; 
+        }
+
+        button {
+            text-align: center;
+            font-size: 17px;
+            padding: 0,5em 1.5em;
+            font-weight: 35%;
+            background: #393b41;
+            color: white;
+            border: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.6em;
+            cursor: pointer;
+            width: 65px;
+            height: 35px;
+        }
+
+        .gradient {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            border-radius: 0.6em;
+            margin-top: -0.25em;
+            background-image: linear-gradient(
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0),
+                rgba(0, 0, 0, 0.3)
+            );
+        }
+
+        .label {
+            position: relative;
+            top: -1px;
+        }
+
+        .transition {
+            transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            transition-duration: 500ms;
+            background-color: rgba(114, 179, 154, 0.6);
+            border-radius: 9999px;
+            width: 0;
+            height: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button:hover .transition {
+            width: 14em;
+            height: 14em;
+        }
+
+        button:active {
+            transform: scale(0.97);
+        }
+
+        #erro {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+    
+    <script>
+        function buscar() {
+            fetch('https://raw.githubusercontent.com/EscandioNeider/jsonTecnosolutions/refs/heads/main/dados.json').then(resposta => resposta.json()).then(corpo => {
+                var identificador = document.getElementById('valor').value;
+                var encontrado = false;
+                corpo.forEach(pessoa => {
+                    if (identificador == pessoa.cpf) {
+                        var link1 = `<a href="${pessoa.link}" target="_blank">Visite nosso site</a>`;
+                        document.getElementById('imagem').innerHTML = pessoa.imagem;
+                        document.getElementById('nome').innerHTML = pessoa.nome;
+                        document.getElementById('sobrenome').innerHTML = pessoa.sobrenome;
+                        document.getElementById('cidade').innerHTML = pessoa.cidade;
+                        document.getElementById('pais').innerHTML = pessoa.pais;
+                        document.getElementById('link').innerHTML = link1;
+
+                        document.getElementById('erro').innerHTML = "";
+                        encontrado = true;
+                    }
+                });
+
+                if (!encontrado) {
+                    document.getElementById('erro').innerHTML = "Registro Inválido.";
+                }
+
+                console.log(corpo);
+            }).catch(error => {
+                console.error('Erro ao buscar os dados:', error);
+            });
+        }
+    </script>
+    
+</body>
+</html>

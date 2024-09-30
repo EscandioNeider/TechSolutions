@@ -1,4 +1,4 @@
-Link da Página Index: https://escandioneider.github.io/TechSolutions/
+Link da Página Index: https://escandioneider.github.io/TechSolutions/index.html
 
 CPF's Disponíveis: "111.111.111-11"
 "222.222.222-22"

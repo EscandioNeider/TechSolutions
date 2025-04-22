@@ -1,0 +1,209 @@
+body{
+    background-color: #565353;
+    color: #e7e7e7;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    background-color:#782424;
+    border-bottom: 0.0625rem solid #b60505;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a h1 {
+    font-size: 1.5rem;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header a {
+    color: #e7e7e7;
+    margin-left: 1.875rem;
+}
+
+nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+nav a:hover {
+    color: #a72d2d;
+}
+
+/* main */
+main h1 {
+    text-align: center;
+    margin: 2rem 0 1rem 0;
+}
+
+main p {
+    font-size: 1.125rem;
+    max-width: 45rem;
+    margin: 0 auto 1.875rem auto;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+legend{
+    text-align: center;
+    font-size: 2rem;
+}
+
+fieldset{
+    padding: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    border-radius: 15px;
+    border-color: #b86c6c;
+}
+
+label {
+    grid-column: span 1;
+    font-weight: bold;
+}
+
+input {
+    grid-column: span 1;
+    width: 100%;
+    border: 1px solid #ccc;
+    color: #363636;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #dddddd;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 1.50rem;
+    background: none;
+    border: none;
+    color: #e7e7e7;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 20;
+}
+
+/* Footer */
+footer {
+    padding: 1.25rem 2.5rem;
+    background-color:  #7c1d1dd8;
+    text-align: center;
+    color: #ada7a7;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    border-top: 0.0625rem solid #b60505;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 580px){
+   
+    body{
+        overflow-x: hidden;
+    }
+
+    header{ 
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header div {
+        float: left;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        text-align: center !important;
+        color: white;
+    }
+
+    nav a{
+        flex-wrap: wrap;
+        font-size: 0.90rem;
+        text-align: center;
+    }
+
+    /* menu hamburguer */
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #7c1d1dd8;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    nav.ativo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 5px;
+        background-color:#782424;
+        z-index: 10;
+
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    form div{
+        padding: 0;
+    }
+
+    form{
+        padding: 5px;
+        max-width: 90%;
+    }
+
+    fieldset{
+        padding: 15px;
+       width: 100%;
+       display: flex;
+       flex-direction: column;
+    }
+}   

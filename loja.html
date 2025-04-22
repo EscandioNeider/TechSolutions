@@ -1,206 +1,93 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> 🛒 E-Commerce</title>
-
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #000000;
-            margin: 0;
-            padding: 20px;
-        }
-        header {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            background-color: #000000b2;
-            z-index: 1000;
-            padding: 0 10px;
-        }
-
-        .logo {
-            color: rgb(209, 205, 158);
-            font-size: 20px;
-            position: absolute; 
-            left: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center; 
-            width: 100%;
-        }
-
-        .navegação {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center; 
-        }
-
-        .navegação li {
-            margin: 0 15px; /* Controle de espaço entre links */
-        }
-
-        .navegação li a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: #ffffff;
-        }
-
-        .navegação li a:hover {
-            background-color: #ffffff;
-            color: #000000;
-            padding: 5px 10px;
-            border-radius: 0px;
-        }
-
-        .navegação li a:focus {
-            outline: 2px solid #ffffff; /* Adicionado para acessibilidade */
-            background-color: #000000;
-            color: #ffffff;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .products-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .product {
-            background-color: #ffffff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .product img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .product h2 {
-            font-size: 1.2rem;
-            color: #333;
-        }
-
-        .product p {
-            font-size: 1rem;
-            color: #666;
-        }
-
-        .price {
-            font-size: 1.5rem;
-            color: #1ec244;
-        }
-
-        .buy-button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            background-color: #000000;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        .buy-button:hover {
-            background-color: #1a701a;
-        }
-    </style>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🛒 E-Commerce</title>
+    <link rel="stylesheet" href="css/geral.css" />
+    <link rel="stylesheet" href="css/loja.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <ul class="navegação">
-                <li class="logo"><a href="index.html">TECHSOLUTIONS</a></li>
-                <li><a href="cep.html">CEP</a></li>
-                <li><a href="dolar.html">Dólar</a></li>
-                <li><a href="clima.html">Clima</a></li>
-                <li><a href="loja.html">E-Commerce</a></li>
-                <li><a href="tema.html">Estrelas</a></li>
-                <li><a href="cpf.html">CPF</a></li>
-            </ul>
-        </nav>
+      <div>
+        <a href="index.html">
+          <h1>TECHSOLUTIONS</h1>
+        </a>
+      </div>
+      <button id="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
+      <nav>
+        <a href="cep.html">CEP</a>
+        <a href="cpf.html">Busca de CPF</a>
+        <a href="dolar.html">Dólar</a>
+        <a href="clima.html">Clima</a>
+        <a href="tema.html">Estrelas</a>
+        <a href="loja.html">E-Commerce</a>
+      </nav>
     </header>
 
-    <div id="products" class="products-container">
+    <main>
+      <div id="products" class="products-container">
         <!-- PRODUTOS -->
-    </div>
+      </div>
+    </main>
 
+    <footer>© Todos os direitos reservados à TechSolutions</footer>
+
+    <script src="geral.js"></script>
     <script>
-        async function fetchProducts() {
-            try {
-                const response = await fetch('https://fakestoreapi.com/products');
-                const products = await response.json();
-                const productsContainer = document.getElementById('products');
-                productsContainer.innerHTML = '';
+      async function fetchProducts() {
+        try {
+          const response = await fetch("https://fakestoreapi.com/products");
+          const products = await response.json();
+          const productsContainer = document.getElementById("products");
+          productsContainer.innerHTML = "";
 
-                products.forEach(product => {
-                    const productElement = document.createElement('div');
-                    productElement.classList.add('product');
+          products.forEach((product) => {
+            const productElement = document.createElement("div");
+            productElement.classList.add("product");
 
-                    productElement.innerHTML = `
+            productElement.innerHTML = `
                         <img src="${product.image}" alt="${product.title}">
                         <h2>${product.title}</h2>
-                        <p>${product.description.substring(0, 100)}...</p>
                         <p class="price">$${product.price}</p>
-                        <button class="buy-button" onclick="buyProduct(${product.id})">Comprar</button>
+                        <button class="buy-button" onclick="buyProduct(${
+                          product.id
+                        })">Comprar</button>
                     `;
 
-                    productsContainer.appendChild(productElement);
-                });
-            } catch (error) {
-                console.error('Erro ao buscar produtos:', error);
-            }
+            productsContainer.appendChild(productElement);
+          });
+        } catch (error) {
+          console.error("Erro ao buscar produtos:", error);
         }
+      }
 
-        async function buyProduct(productId) {
-            const cartData = {
-                userId: 1, // Simulando um usuário com ID 1
-                date: new Date().toISOString().split('T')[0], // Data atual no formato YYYY-MM-DD
-                products: [
-                    { productId: productId, quantity: 1 }
-                ]
-            };
+      async function buyProduct(productId) {
+        const cartData = {
+          userId: 1, // Simulando um usuário com ID 1
+          date: new Date().toISOString().split("T")[0], // Data atual no formato YYYY-MM-DD
+          products: [{ productId: productId, quantity: 1 }],
+        };
 
-            try {
-                const response = await fetch('https://fakestoreapi.com/carts', {
-                    method: 'POST',
-                    body: JSON.stringify(cartData),
-                    headers: {
-                        'Content-Type': 'application/json'
-                    }
-                });
+        try {
+          const response = await fetch("https://fakestoreapi.com/carts", {
+            method: "POST",
+            body: JSON.stringify(cartData),
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
 
-                const result = await response.json();
-                alert('Produto adicionado ao carrinho! ID do carrinho: ' + result.id);
-            } catch (error) {
-                console.error('Erro ao adicionar produto ao carrinho:', error);
-                alert('Falha ao adicionar produto ao carrinho.');
-            }
+          const result = await response.json();
+          alert("Produto adicionado ao carrinho! ID do carrinho: " + result.id);
+        } catch (error) {
+          console.error("Erro ao adicionar produto ao carrinho:", error);
+          alert("Falha ao adicionar produto ao carrinho.");
         }
+      }
 
-        // Carregar produtos ao abrir a página
-        window.onload = fetchProducts;
+      // Carregar produtos ao abrir a página
+      window.onload = fetchProducts;
     </script>
-
-</body>
+  </body>
 </html>

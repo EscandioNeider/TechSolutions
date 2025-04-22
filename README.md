@@ -1,16 +1,19 @@
-TechSolutions é um site dedicado ao desenvolvimento de APIs e sistemas integrados, oferecendo uma ampla gama de ferramentas e serviços para simplificar a interação com tecnologia.
+# 💻 TECHSOLUTIONS
 
-Consulta de APIs:
-API de CEP
-API de câmbio de dólar
-API de clima
-API de e-commerce
-API de informações de estrelas
-API de verificação de CPF
+TechSolutions é um site solicitado pelo nosso orientador de back-end (inicialmente postado em 31/10/2024), dedicado ao desenvolvimento de APIs e sistemas integrados, oferecendo uma ampla gama de ferramentas e serviços para simplificar a interação com tecnologia.
 
-- Navegue pelas opções de API no cabeçalho do site.
-- Clique em uma API para acessar suas informações e funcionalidades.
-- Utilize o menu de ajuda e contatos caso precise de suporte adicional.
+Atualmente repostado (22/04/25) com as seguintes melhorias:
+- Mudanças no visual;
+- Responsividade;  
+
+## SEGUE ABAIXO ALGUMAS NOTAS EM RELAÇÃO AO PROJETO:
+As API'S disponíveis para consumo são:
+- CEP;
+- Dólar;
+- Clima;
+- E-Commerce;
+- Estrelas;
+- CPF;
 
 CPF's Disponíveis: 
 - "111.111.111-11"
@@ -25,5 +28,4 @@ CPF's Disponíveis:
 - "101.010.101-01"
 - "121.121.121-12"
 - "212.212.212-21"
-
-Link da Página Index: https://escandioneider.github.io/TechSolutions/index.html
+🔗 Visite meu projeto: https://escandioneider.github.io/TechSolutions/index.html

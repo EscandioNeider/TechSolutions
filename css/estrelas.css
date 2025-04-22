@@ -1,0 +1,334 @@
+body {
+  background-color: #565353;
+  color: #e7e7e7;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+header {
+  background-color: #71578f;
+  border-bottom: 0.0625rem solid #9623b9;
+}
+
+header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a h1 {
+  font-size: 1.5rem;
+}
+
+header nav a {
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+header a {
+  color: #e7e7e7;
+  margin-left: 1.875rem;
+}
+
+nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 1.25rem;
+}
+
+nav a:hover {
+  color: #90b3d4;
+}
+
+#menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #e7e7e7;
+  cursor: pointer;
+  position: absolute;
+  right: 1rem;
+  z-index: 20;
+}
+
+/* main */
+main {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+main h1 {
+  text-align: center;
+  color: #dddddd;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+main p {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Card-Container */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 300px;
+}
+.card {
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(227, 186, 255, 0.6);
+}
+
+/* Imagem da estrela */
+.card-image-container img {
+  width: 100%;
+  height: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Seção Estrelas */
+.stars-section {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.star-info {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 650px;
+  height: 450px;
+  background-color: #464646;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(227, 186, 255, 0.6);
+  color: #f0f0f0;
+  display: none;
+}
+
+#star-info {
+  display: none;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 0.5px;
+  max-width: 800px;
+  max-width: 450px;
+}
+
+#star-info h2 {
+  font-size: 1.75rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+
+/* Mensagem de erro */
+.error {
+  color: #ff4c4c;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+button {
+  background-color: #57878f;
+  border: none;
+  color: #dddddd;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  padding: 1.25rem 2.5rem;
+  background-color: #71578f;
+  text-align: center;
+  color: #dddddd;
+  position: sticky;
+  bottom: 0;
+  z-index: 10;
+  border-top: 0.0625rem solid #9623b9;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 580px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header div {
+    float: left;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  header h1 {
+    font-size: 1rem;
+    text-align: center !important;
+    color: white;
+  }
+
+  nav a {
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  /* menu hamburguer */
+  nav {
+    display: none;
+    flex-direction: column;
+    background-color: #71578f;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  nav.ativo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 5px;
+    background-color: #71578f;
+    z-index: 10;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  /* main */
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  main h1 {
+    font-size: 1.5rem;
+    color: #dddddd;
+  }
+
+  main p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+
+  .container{
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Card-Container */
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.50rem;
+    width: fit-content;
+  }
+
+  .card {
+    overflow: hidden;
+    width: 60px;
+    height: 60px;
+    display: flex;
+  }
+
+  /* Seção Estrelas */
+  .stars-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 300px;
+    gap: 1.5rem;
+  }
+
+  .star-info {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 650px;
+    height: 320px;
+    display: none;
+  }
+
+  #star-info {
+    display: none;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    max-width: 800px;
+    max-width: 450px;
+  }
+
+  #star-info h2 {
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: 0.8rem;
+  }
+
+  #star-info p{
+    font-size: 1rem;
+  }
+
+  footer {
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+}

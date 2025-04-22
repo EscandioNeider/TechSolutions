@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1.25rem 1.25rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+header a,
+a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header a {
+    margin-left: 1.875rem;
+}
+
+nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li a {
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+/* Footer */
+footer {
+    padding: 1.25rem 1.25rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}

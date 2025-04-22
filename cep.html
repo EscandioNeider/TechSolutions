@@ -1,217 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>🌍 Consulte seu CEP</title>
-    <style>
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url(media/backMapa.gif);
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        header {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            background-color: #000000;
-            z-index: 1000;
-            padding: 0 10px;
-        }
-
-        .logo {
-            color: rgb(209, 205, 158);
-            font-size: 20px;
-            position: absolute; 
-            left: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center; 
-            width: 100%;
-        }
-
-        .navegação {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center; 
-        }
-
-        .navegação li {
-            margin: 0 15px; /* Aumentado o espaço entre links */
-        }
-
-        .navegação li a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: #ffffff;
-        }
-
-        .navegação li a:hover {
-            background-color: #ffffff63;
-            color: #000000;
-            padding: 5px 10px;
-            border-radius: 0px;
-        }
-
-        .navegação li a:focus {
-            outline: 2px solid #cbbfad; /* Adicionado para acessibilidade */
-            background-color: #000000;
-            color: #cbbfad;
-        }
-
-        /* Responsividade */
-        .div {
-            width: 75%;
-            text-align: center;
-            color: aliceblue;
-            background-color: #18243b28;
-            box-shadow: 0px 4px 8px #c6d8f8de;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 15%;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                flex-direction: column;
-            }
-
-            .div {
-                width: 90%;
-                padding: 15px;
-                margin-top: 30%;
-            }
-
-            .navegação li a {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .div {
-                width: 100%;
-                padding: 10px;
-                margin-top: 40%;
-            }
-
-            .navegação li a {
-                font-size: 0.9rem;
-            }
-        }
-
-        fieldset {
-            border: 2px solid #ff6601;
-            border-radius: 10px;
-            padding: 20px;
-            width: 55%;
-            margin: 0 auto;
-            animation: borderAnimation 5s ease infinite;
-        }
-
-        .subtitulo {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        @keyframes borderAnimation {
-            0% { border-color: #ff6601; }
-            25% { border-color: #ffc400; }
-            50% { border-color: #b3ff00; }
-            75% { border-color: #ffc400; }
-            100% { border-color: #ff6601; }
-        }
-    </style>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/cep.css">
 </head>
+
 <body>
     <header>
+        <div>
+            <a href="index.html"><h1>TECHSOLUTIONS</h1></a>
+        </div>
+        <button id="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
         <nav>
-            <ul class="navegação">
-                <li class="logo"><a href="index.html">TECHSOLUTIONS</a></li>
-                <li><a href="cep.html">CEP</a></li>
-                <li><a href="dolar.html">Dólar</a></li>
-                <li><a href="clima.html">Clima</a></li>
-                <li><a href="loja.html">E-Commerce</a></li>
-                <li><a href="tema.html">Estrelas</a></li>
-                <li><a href="cpf.html">CPF</a></li>
-            </ul>
+            <a href="cep.html">CEP</a>
+            <a href="cpf.html">Busca de CPF</a>
+            <a href="dolar.html">Dólar</a>
+            <a href="clima.html">Clima</a>
+            <a href="tema.html">Estrelas</a>
+            <a href="loja.html">E-Commerce</a>
         </nav>
     </header>
 
-    <form>
-        <div class="div">
-            <h1 class="titulo">Consulte o seu CEP!</h1>
+    <main>
+        <form>
+            <h1>CONSULTE O SEU CEP!</h1>
             <p>Digite seu CEP e clique <strong>fora do campo</strong> para receber todas as informações que precisa!</p>
             <fieldset>
-                <legend class="titulo2">Endereço:</legend>
-                <label class="subtitulo" for="cep">CEP</label>
-                <input class="valor" type="text" id="cep" autocomplete="off" placeholder="Digite o CEP">
-                <br><br>
-                <label class="subtitulo" for="rua">Rua</label>
-                <input class="valor" type="text" id="rua" readonly>
-                <br><br>
-                <label class="subtitulo" for="numero">Número</label>
-                <input class="valor" type="text" id="numero" placeholder="Digite o número">
-                <br><br>
-                <label class="subtitulo" for="bairro">Bairro</label>
-                <input class="valor" type="text" id="bairro" readonly>
-                <br><br>
-                <label class="subtitulo" for="cidade">Cidade</label>
-                <input class="valor" type="text" id="cidade" readonly>
-                <br><br>
-                <label class="subtitulo" for="estado">Estado</label>
-                <input class="valor" type="text" id="estado" readonly>
-                <br>
-            </fieldset>
-        </div>
-    </form>
+                <legend>Endereço:</legend>
 
+                <div>
+                    <label class="subtitulo" for="cep">CEP</label>
+                    <input class="valor" type="text" id="cep" name="cep" autocomplete="off" placeholder="Digite o CEP">
+                </div>
+
+                <div>
+                    <label class="subtitulo" for="rua">Rua</label>
+                    <input class="valor" type="text" id="rua" name="rua" readonly>
+                </div>
+
+                <div>
+                    <label class="subtitulo" for="numero">Número</label>
+                    <input class="valor" type="text" id="numero" name="numero" placeholder="Digite o número">
+                </div>
+
+                <div>
+                    <label class="subtitulo" for="bairro">Bairro</label>
+                    <input class="valor" type="text" id="bairro" name="bairro" readonly>
+                </div>
+
+                <div>
+                    <label class="subtitulo" for="cidade">Cidade</label>
+                    <input class="valor" type="text" id="cidade" name="cidade" readonly>
+                </div>
+
+                <div>
+                    <label class="subtitulo" for="estado">Estado</label>
+                    <input class="valor" type="text" id="estado" name="estado" readonly>
+                </div>
+            </fieldset>
+        </form>
+    </main>
+
+    <footer>© Todos os direitos reservados à TechSolutions</footer>
+
+    <script src="geral.js"></script>
     <script>
         const preencherFormulario = (endereco) => {
             document.getElementById("rua").value = endereco.logradouro || "";
-            document.getElementById("bairro").value = endereco.bairro || ""; 
+            document.getElementById("bairro").value = endereco.bairro || "";
             document.getElementById("cidade").value = endereco.localidade || "";
             document.getElementById("estado").value = endereco.uf || "";
-        }
+        };
 
         const cepValido = (cep) => {
-            return cep.length === 8 && /^[0-9]+$/.test(cep);  // Verifica se são 8 números
-        }
+            return cep.length === 8 && /^[0-9]+$/.test(cep);
+        };
 
         const PesquisaCep = async () => {
-            const cep = document.getElementById("cep").value.replace("-", "");  
-            const url = `https://viacep.com.br/ws/${cep}/json/`;  
+            const cep = document.getElementById("cep").value.replace("-", "");
+
             if (cepValido(cep)) {
-                const dados = await fetch(url);
-                const endereco = await dados.json();
-                if (endereco.erro) {
-                    alert("CEP inválido!");  
-                    return;
+                try {
+                    const url = `https://viacep.com.br/ws/${cep}/json/`;
+                    const resposta = await fetch(url);
+                    const endereco = await resposta.json();
+
+                    if (endereco.erro) {
+                        alert("CEP não encontrado!");
+                        return;
+                    }
+
+                    preencherFormulario(endereco);
+                } catch (erro) {
+                    alert("Erro ao buscar o CEP. Tente novamente.");
+                    console.error(erro);
                 }
-                preencherFormulario(endereco);
             } else {
-                alert("Formato de CEP inválido!");
+                alert("Formato de CEP inválido! Digite apenas 8 números.");
             }
-        }
+        };
 
         document.getElementById("cep").addEventListener("focusout", PesquisaCep);
     </script>
 </body>
+
 </html>

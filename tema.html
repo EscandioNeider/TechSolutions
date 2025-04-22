@@ -1,300 +1,111 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> ✨ Info. sobre Estrelas</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-image: url(media/backStars.gif);
-            background-size: cover; 
-            background-position: center;
-            background-repeat: no-repeat;
-            margin: 0;
-            padding: 0;
-            color: #f0f0f0;
-            display: flex;
-            flex-direction: column;
-            height: 100vh;
-        }
-
-        header {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            background-image: url(media/back2stars.gif);
-            z-index: 1000;
-            padding: 0 10px;
-        }
-
-        .logo {
-            color: rgb(255, 255, 255);
-            font-size: 20px;
-            position: absolute; 
-            left: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center; 
-            width: 100%;
-        }
-
-        .navegação {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center; 
-        }
-
-        .navegação li {
-            margin: 0 15px; /* Controle de espaço entre links */
-        }
-
-        .navegação li a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: #ffffff;
-        }
-
-        .navegação li a:hover {
-            background-color: #ffffff4f;
-            color: #ffffff;
-            padding: 5px 10px;
-            border-radius: 0px;
-        }
-    
-        .navegação li a:focus {
-            outline: 2px solid #cbbfad; /* Adicionado para acessibilidade */
-            background-color: #ffffff4f;
-            color: #cbbfad;
-        }
-
-        .div {
-            margin-top: 4%;
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .container {
-            display: flex;
-            height: 100%;
-            flex: 1;
-        }
-
-        .card-container {
-            flex: 1;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .star-info-container {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            overflow-y: auto;
-        }
-
-        .star-info {
-            display: none;
-            text-align: left;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: rgba(90, 86, 86, 0.295);
-            color: #ffffff;
-            width: 100%;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .star-info h2 {
-            margin-bottom: 10px;
-        }
-
-        .star-info p {
-            margin: 5px 0;
-        }
-
-        .card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: #61616180;
-            border-radius: 10px;
-            box-shadow: 0px 10px 12px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
-            padding: 15px;
-        }
-        
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.3);
-        }
-        
-        .card-image-container {
-            width: 100%;
-            height: 100px;
-            background-color: #44444485;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        
-        .card-title {
-            font-size: 16px;
-            font-weight: bold;
-            color: #ffffff;
-        }
-
-        button {
-            background-image: url(media/backStars.gif);
-            border: none;
-            color: #ffffff;
-            padding: 10px 20px;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.507);
-        }
-
-        .error {
-            color: red;
-            font-size: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/estrelas.css">
 </head>
+
 <body>
     <header>
+        <div>
+            <a href="index.html">
+                <h1>TECHSOLUTIONS</h1>
+            </a>
+        </div>
+        <button id="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
         <nav>
-            <ul class="navegação">
-                <li class="logo"><a href="index.html">TECHSOLUTIONS</a></li>
-                <li><a href="cep.html">CEP</a></li>
-                <li><a href="dolar.html">Dólar</a></li>
-                <li><a href="clima.html">Clima</a></li>
-                <li><a href="loja.html">E-Commerce</a></li>
-                <li><a href="tema.html">Estrelas</a></li>
-                <li><a href="cpf.html">CPF</a></li>
-            </ul>
+            <a href="cep.html">CEP</a>
+            <a href="cpf.html">Busca de CPF</a>
+            <a href="dolar.html">Dólar</a>
+            <a href="clima.html">Clima</a>
+            <a href="tema.html">Estrelas</a>
+            <a href="loja.html">E-Commerce</a>
         </nav>
     </header>
 
-    <div class="div">
-        <h1 class="titulo">Informações sobre Estrelas</h1>
+    <main>
+        <h1>Informações sobre Estrelas</h1>
         <p>Clique na estrela que mais achar interessante e obtenha informações sobre ela!</p>
-    </div>
 
-    <div class="container">
-        <div class="card-container">
-            <div class="card" onclick="fetchStarData('Betelgeuse')">
-                <div class="card-image-container">
-                    <img src="img/estrelaBetelgeuse.png" alt="Betelgeuse">
+        <div class="container">
+            <div class="stars-section">
+                <div class="card-container">
+                    <div class="card" onclick="fetchStarData('Betelgeuse')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaBetelgeuse.png" alt="Betelgeuse">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Polaris')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaPolaris.png" alt="Polaris">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Capella')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaCapella.png" alt="Capella">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Sirius')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaSirius.png" alt="Sirius">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Vega')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaVega.png" alt="Vega">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Deneb')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaDeneb.png" alt="Deneb">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Bellatrix')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaBellatrix.png" alt="Bellatrix">
+                        </div>
+                    </div>
+    
+                    <div class="card" onclick="fetchStarData('Fomalhaut')">
+                        <div class="card-image-container">
+                            <img src="img/estrelaFormahaut.png" alt="Fomalhaut">
+                        </div>
+                    </div>
                 </div>
-                <p class="card-title">Betelgeuse</p>
-                <button>Informações</button>
-            </div>
-
-            <div class="card" onclick="fetchStarData('Polaris')">
-                <div class="card-image-container">
-                    <img src="img/estrelaPolaris.png" alt="Polaris">
+                <br>
+    
+                <div class="star-info" id="star-info">
+                    <h2 id="nome"></h2>
+                    <p><strong>Constelação:</strong> <span id="constellation"></span></p>
+                    <p><strong>Ascensão Reta:</strong> <span id="right_ascension"></span></p>
+                    <p><strong>Declinação:</strong> <span id="declination"></span></p>
+                    <p><strong>Magnitude Aparente:</strong> <span id="apparent_magnitude"></span></p>
+                    <p><strong>Magnitude Absoluta:</strong> <span id="absolute_magnitude"></span></p>
+                    <p><strong>Distância (em anos-luz):</strong> <span id="distance_light_years"></span></p>
+                    <p><strong>Classe Espectral:</strong> <span id="spectral_class"></span></p>
                 </div>
-                <p class="card-title">Polaris</p>
-                <button>Informações</button>
             </div>
-
-            <div class="card" onclick="fetchStarData('Capella')">
-                <div class="card-image-container">
-                    <img src="img/estrelaCapella.png" alt="Capella">
-                </div>
-                <p class="card-title">Capella</p>
-                <button>Informações</button>
-            </div>
-
-            <div class="card" onclick="fetchStarData('Sirius')">
-                <div class="card-image-container">
-                    <img src="img/estrelaSirius.png" alt="Sirius">
-                </div>
-                <p class="card-title">Sirius</p>
-                <button>Informações</button>
-            </div>
-
-            <div class="card" onclick="fetchStarData('Vega')">
-                <div class="card-image-container">
-                    <img src="img/estrelaVega.png" alt="Vega">
-                </div>
-                <p class="card-title">Vega</p>
-                <button>Informações</button>
-            </div>
-
-            <div class="card" onclick="fetchStarData('Deneb')">
-                <div class="card-image-container">
-                    <img src="img/estrelaDeneb.png" alt="Deneb">
-                </div>
-                <p class="card-title">Deneb</p>
-                <button>Informações</button>
-            </div>
-
-            <div class="card" onclick="fetchStarData('Bellatrix')">
-                <div class="card-image-container">
-                    <img src="img/estrelaBellatrix.png" alt="Bellatrix">
-                </div>
-                <p class="card-title">Bellatrix</p>
-                <button>Informações</button>
-            </div>
-
-            <div class="card" onclick="fetchStarData('Fomalhaut')">
-                <div class="card-image-container">
-                    <img src="img/estrelaFormahaut.png" alt="Fomalhaut">
-                </div>
-                <p class="card-title">Fomalhaut</p>
-                <button>Informações</button>
-            </div>
+            
         </div>
-        
-        <div class="star-info-container">
-            <div class="star-info" id="star-info">
-                <h2 id="nome"></h2>
-                <p><strong>Constelação:</strong> <span id="constellation"></span></p>
-                <p><strong>Ascensão Reta:</strong> <span id="right_ascension"></span></p>
-                <p><strong>Declinação:</strong> <span id="declination"></span></p>
-                <p><strong>Magnitude Aparente:</strong> <span id="apparent_magnitude"></span></p>
-                <p><strong>Magnitude Absoluta:</strong> <span id="absolute_magnitude"></span></p>
-                <p><strong>Distância (em anos-luz):</strong> <span id="distance_light_years"></span></p>
-                <p><strong>Classe Espectral:</strong> <span id="spectral_class"></span></p>
-            </div>
-        </div>
-    </div>
 
-    <p class="error" id="erro"></p>
+        <p class="error" id="erro"></p>
+    </main>
 
+    <footer>© Todos os direitos reservados à TechSolutions</footer>
+    <script src="geral.js"></script>
     <script>
         async function fetchStarData(starName) {
-            const apiKey = '5tm1oLLc6MvrE/yU/T5IQg==m8A5JgVdtYwWvAmb';  
+            const apiKey = '5tm1oLLc6MvrE/yU/T5IQg==m8A5JgVdtYwWvAmb';
 
             if (!starName) {
                 document.getElementById('erro').textContent = 'Por favor, insira o nome de uma estrela.';
@@ -322,7 +133,7 @@
                         document.getElementById('absolute_magnitude').textContent = star.absolute_magnitude || 'Desconhecida';
                         document.getElementById('distance_light_years').textContent = star.distance_light_years || 'Desconhecida';
                         document.getElementById('spectral_class').textContent = star.spectral_class || 'Desconhecida';
-                        
+
                     } else {
                         document.getElementById('erro').textContent = 'Estrela não encontrada.';
                         document.getElementById('star-info').style.display = 'none';
@@ -337,4 +148,5 @@
         }
     </script>
 </body>
+
 </html>

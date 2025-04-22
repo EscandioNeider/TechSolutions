@@ -1,0 +1,245 @@
+body{
+    background-color: #565353;
+    color: #e7e7e7;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header {
+    background-color:#995d18;
+    border-bottom: 0.0625rem solid #cf5d00;
+}
+
+header div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header a h1 {
+    font-size: 1.5rem;
+}
+
+header nav a {
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+header a {
+    color: #e7e7e7;
+    margin-left: 1.875rem;
+}
+
+nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+nav a:hover {
+    color: #a7762d;
+}
+
+#menu-toggle {
+    display: none;
+    font-size: 1.50rem;
+    background: none;
+    border: none;
+    color: #e7e7e7;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    z-index: 20;
+}
+
+
+/* main */
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-dados{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+}
+
+.div-dados h1{
+    text-align: center;
+    color: #dddddd;
+    font-size: 2rem;
+    margin-bottom: 0.50rem;
+}
+
+.div-dados p{
+    text-align: center;
+    color: #fa770c;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+input {
+    margin-top: 0.50rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    color: #363636;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: #dddddd;
+}
+
+#link a{
+    color: #fa770c;
+}
+
+button{
+    background-color: #995d18;
+    border: none;
+    color: #dddddd;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(114, 112, 112, 0.507);
+}
+
+/* Footer */
+footer {
+    padding: 1.25rem 2.5rem;
+    background-color:  #995d18;
+    text-align: center;
+    color: #dddddd;
+    position: sticky;
+    bottom: 0;
+    z-index: 10;
+    border-top: 0.0625rem solid #cf5d00;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 580px){
+
+    body{
+        overflow-x: hidden;
+    }
+
+    header{ 
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header div {
+        float: left;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 1rem;
+        text-align: center !important;
+        color: white;
+    }
+
+    nav a{
+        flex-wrap: wrap;
+        font-size: 0.90rem;
+        text-align: center;
+    }
+
+    /* menu hamburguer */
+    nav {
+        display: none;
+        flex-direction: column;
+        background-color: #995d18;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        text-align: center;
+    }
+
+    nav.ativo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+        padding: 5px;
+        background-color:#995d18;
+        z-index: 10;
+
+    }
+
+    #menu-toggle {
+        display: block;
+    }
+
+    /* main */
+    .div-dados{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+        max-width: 80%;
+    }
+    
+    .div-dados h1{
+        text-align: center;
+        margin-bottom: 0.50rem;
+    }
+    
+    .div-dados p{
+        text-align: center;
+        color: #fa770c;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+    }
+    
+    input {
+        margin-top: 0.50rem;
+        width: 100%;
+        border: 1px solid #ccc;
+        color: #363636;
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 1rem;
+        text-align: center;
+        background-color: #dddddd;
+    }
+    
+    #link a{
+        color: #fa770c;
+    }
+    
+    button{
+        background-color: #995d18;
+        border: none;
+        color: #dddddd;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 4px 8px rgba(114, 112, 112, 0.507);
+    }
+    
+}   

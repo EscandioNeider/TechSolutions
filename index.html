@@ -1,155 +1,142 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Página inicial sobre APIs com exemplos e informações detalhadas.">
-    <title>🏡 Homepage - TechSolutions</title> 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-image: url(media/backIndex.gif); 
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            padding-top: 100px; 
-        }
-        header {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            background-color: #665954;
-            z-index: 1000;
-            padding: 0 10px;
-        }
-
-        .logo {
-            color: rgb(209, 205, 158);
-            font-size: 20px;
-            position: absolute; 
-            left: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center; 
-            width: 100%;
-        }
-
-        .navegação {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center; 
-        }
-
-        .navegação li {
-            margin: 0 15px; /* Aumentado o espaço entre links */
-        }
-
-        .navegação li a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: #cbbfad;
-        }
-
-        .navegação li a:hover {
-            background-color: #cbbfad;
-            color: #422a20;
-            padding: 5px 10px;
-            border-radius: 0px;
-        }
-
-        .navegação li a:focus {
-            outline: 2px solid #cbbfad; /* Adicionado para acessibilidade */
-            background-color: #422a20;
-            color: #cbbfad;
-        }
-
-        /* Container das duas divs */
-        .container {
-            display: flex; /* Habilita o Flexbox */
-            justify-content: space-around; /* Distribui espaço ao redor das divs */
-            align-items: flex-start; /* Alinha as divs no topo */
-            padding: 20px;
-            flex-wrap: wrap; /* Permite quebrar o layout em dispositivos menores */
-        }
-
-        .div1Api, .div2Api {
-            height: 65%;
-            width: 35%;
-            text-align: center;
-            color: #d1d0cf;
-            background-color: #6d645c8a;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-            margin-top: 50px;
-        }
-
-        a {
-            color: rgb(0, 0, 0);
-            text-decoration: none;
-        }
-
-        footer {
-            text-align: center;
-            color: #422a20;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            padding: 10px 20px; 
-            font-size: 0.9rem; /* Ajuste para telas pequenas */
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Home</title>
 </head>
+
 <body>
     <header>
+        <a href="index.html"><h1>TECHSOLUTIONS</h1></a>
         <nav>
-            <ul class="navegação">
-                <li class="logo"><a href="index.html">TECHSOLUTIONS</a></li>
-                <li><a href="cep.html">CEP</a></li>
-                <li><a href="dolar.html">Dólar</a></li>
-                <li><a href="clima.html">Clima</a></li>
-                <li><a href="loja.html">E-Commerce</a></li>
-                <li><a href="tema.html">Estrelas</a></li>
-                <li><a href="cpf.html">CPF</a></li>
-            </ul>
+            <a href="#tecno">Quem Somos?</a>
+            <a href="#servicos">Nossos Serviços</a>
+            <a href="#o-que-api">O que é uma API?</a>
         </nav>
     </header>
+
+    <main>
+        <section id="tecno" style="background-color: #7cb9a6">
+            <div>
+                <h2>Bem-vindo à TechSolutions</h2>
+                <br>
+                <p>Especializados em desenvolvimento de APIs e sistemas integrados, oferecemos uma ampla gama de
+                    ferramentas
+                    e serviços, desde consultas de dados essenciais, como CEPs e clima, até funcionalidades como
+                    cotações de
+                    câmbio e e-commerce.
+                    <br>
+                    Nossa missão é conectar informações de maneira eficiente, proporcionando experiências dinâmicas e
+                    seguras para nossos usuários. Seja para desenvolvedores ou o público em geral, estamos aqui para
+                    simplificar a interação com a tecnologia.
+                </p>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div>
+                <h2>Serviços</h2>
+                <div class="todos-servicos">
+
+                    <!-- CEP -->
+                    <a href="cep.html"><div class="card" id="cep">
+                        <img src="img/cep-img.png" alt="">
+                        <p class="card-title">API - CEP</p>
+                        <p class="card-des">
+                            Permite que obtenha informações através de seu CEP.
+                        </p>
+                    </div></a>
+
+                    <!-- CPF-->
+                     <a href="cpf.html">
+                        <div class="card">
+                            <img src="img/cpf-img.png" alt="">
+                            <p class="card-title">API - Busca de CPF</p>
+                            <p class="card-des">
+                                Faz a busca de cpf's que estão pré definidos no README do projeto.
+                            </p>
+                        </div>
     
-    <!-- Container para as divs -->
-    <div class="container">
-        <div class="div1Api">
-            <h2>Bem-vindo à TechSolutions</h2>
-            <p>Especializados em desenvolvimento de APIs e sistemas integrados, oferecemos uma ampla gama de ferramentas e serviços, desde consultas de dados essenciais, como CEPs e clima, até funcionalidades como cotações de câmbio e e-commerce.
-            <br>
-            Nossa missão é conectar informações de maneira eficiente, proporcionando experiências dinâmicas e seguras para nossos usuários. Seja para desenvolvedores ou o público em geral, estamos aqui para simplificar a interação com a tecnologia.</p>
-            <br>
-            No cabeçalho você pode consumir alguns de nossos serviços!
-            <br><br>
-            Caso você não saiba o que é uma API, ao lado temos algumas informações.
-        </div>
-    
-        <div class="div2Api">
-            <h2>O que é uma API?</h2>
-            <p>Uma Interface de Programação de Aplicações permite a comunicação entre diferentes sistemas, facilitando a integração, inovação e expansão. Elas aumentam a velocidade de desenvolvimento ao permitir o uso de funcionalidades prontas, além de suportar mudanças rápidas sem reescrever todo o código. <br> As APIs podem ser privadas, usadas internamente por empresas; públicas, abertas a qualquer pessoa; de parceiros, acessíveis a desenvolvedores autorizados; ou compostas, combinando várias APIs para resolver problemas mais complexos. APIs também tornam a manutenção mais fácil, já que as mudanças internas de um sistema não afetam o outro.</p>
-            <br>
-            <a href="https://www.techtudo.com.br/listas/2020/06/o-que-e-api-e-para-que-serve-cinco-perguntas-e-respostas.ghtml" target="_blank">Saiba mais clicando aqui!</a>
-        </div>
-    </div>
+                     </a>
+                   
+                    <!-- Dolar-->
+                     <a href="dolar.html">
+                        <div class="card">
+                            <img src="img/dolar-img.png" alt="">
+                            <p class="card-title">API - Consulta de Dólar</p>
+                            <p class="card-des">
+                                Com ele, o usuário pode ver como está o dolar no momento. <br> O site tem seus dados atualizados a cada 10seg.
+                            </p>
+                        </div>
+                     </a>
+            
+                    <!-- Clima -->
+                     <a href="clima.html">
+                        <div class="card">
+                            <img src="img/clima-img.png" alt="">
+                            <p class="card-title">API - Clima</p>
+                            <p class="card-des">
+                               O usuário pode checar a temperatura de sua cidade.
+                            </p>
+                        </div>
+                     </a>
+
+                    <!-- Estrelas -->
+                    <a href="tema.html">
+                        <div class="card">
+                            <img src="img/tema-img.png" alt="">
+                            <p class="card-title">API - Estrelas</p>
+                            <p class="card-des">
+                                É possível obter informações de seis estrelas que estão pré-inseridas na página.
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- E-commerce-->
+                    <a href="loja.html">
+                        <div class="card">
+                            <img src="img/loja-img.png" alt="">
+                            <p class="card-title">API - E Commerce</p>
+                            <p class="card-des">
+                               Aqui, há uma simulação de um e-commerce.
+                            </p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="o-que-api" style="background-color:#7cb9a6">
+            <div>
+                <h2>O que é uma API?</h2>
+                <br>
+                <p>Uma Interface de Programação de Aplicações permite a comunicação entre diferentes sistemas,
+                    facilitando a
+                    integração, inovação e expansão. Elas aumentam a velocidade de desenvolvimento ao permitir o uso de
+                    funcionalidades prontas, além de suportar mudanças rápidas sem reescrever todo o código.
+                    <br>
+                    As APIs podem ser privadas, usadas internamente por empresas; públicas, abertas a qualquer pessoa;
+                    de
+                    parceiros, acessíveis a desenvolvedores autorizados; ou compostas, combinando várias APIs para
+                    resolver
+                    problemas mais complexos. APIs também tornam a manutenção mais fácil, já que as mudanças internas de
+                    um
+                    sistema não afetam o outro.
+                </p>
+                <br>
+                <a href="https://www.techtudo.com.br/listas/2020/06/o-que-e-api-e-para-que-serve-cinco-perguntas-e-respostas.ghtml"
+                    target="_blank" rel="noopener noreferrer">Saiba mais clicando aqui!</a>
+            </div>
+        </section>
+    </main>
 
     <footer>© Todos os direitos reservados à TechSolutions</footer>
 </body>
+
 </html>

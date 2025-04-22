@@ -1,175 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/geral.css">
+    <link rel="stylesheet" href="css/clima.css">
     <title> 🌦 Previsão do Tempo</title>
 </head>
-<body class="background">
-    
+
+<body>
+
     <header>
+        <div>
+            <a href="index.html">
+                <h1>TECHSOLUTIONS</h1>
+            </a>
+        </div>
+        <button id="menu-toggle" aria-label="Abrir Menu">&#9776;</button>
         <nav>
-            <ul class="navegação">
-                <li class="logo"><a href="index.html">TECHSOLUTIONS</a></li>
-                <li><a href="cep.html">CEP</a></li>
-                <li><a href="dolar.html">Dólar</a></li>
-                <li><a href="clima.html">Clima</a></li>
-                <li><a href="loja.html">E-Commerce</a></li>
-                <li><a href="tema.html">Estrelas</a></li>
-                <li><a href="cpf.html">CPF</a></li>
-            </ul>
+            <a href="cep.html">CEP</a>
+            <a href="cpf.html">Busca de CPF</a>
+            <a href="dolar.html">Dólar</a>
+            <a href="clima.html">Clima</a>
+            <a href="tema.html">Estrelas</a>
+            <a href="loja.html">E-Commerce</a>
         </nav>
     </header>
 
-    <div class="div">
-        <h1>Previsão do tempo</h1>
-        <p>Digite o nome da cidade</p>
-        <input type="text" id="city">
-        <button onclick="getWeather()" class="botao">Pesquisar</button>
+    <main>
+        <div>
+            <h1>Previsão do tempo</h1>
+            <p>Digite o nome da cidade</p>
+        </div>
+        <div>
+            <input type="text" id="city">
+            <br>
+            <button onclick="getWeather()" class="botao">Pesquisar</button>
+        </div>
+
         <p id="temperatura">Aguarde</p>
-    </div>
+    </main>
 
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-
-        .background {
-            background-image: url('media/backClima.gif'); 
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            width: 100%;
-            height: 100vh;
-            position: relative;
-        }
-
-        header {
-            position: fixed; 
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            background-color: #103664;
-            z-index: 1000;
-            padding: 0 10px;
-        }
-
-        .logo {
-            font-size: 20px;
-            position: absolute; 
-            left: 10px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: center; 
-            width: 100%;
-        }
-
-        .navegação {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center; 
-        }
-
-        .navegação li {
-            margin: 0 15px; /* Controle de espaço entre links */
-        }
-
-        .navegação li a {
-            text-decoration: none;
-            font-size: 1.25rem;
-            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            color: #ddb609;
-        }
-
-        .navegação li a:hover {
-            background-color: #ddb609;
-            color: #103664;
-            padding: 5px 10px;
-            border-radius: 0px;
-        }
-
-        .navegação li a:focus {
-            outline: 2px solid #ddb609; /* Adicionado para acessibilidade */
-            background-color: #103664;
-            color: #ddb609;
-        }
-
-        .div {
-            width: 35%;
-            text-align: center;
-            color: aliceblue;
-            background-color: #53526188;
-            box-shadow: 0px 4px 8px rgba(162, 166, 189, 0.877);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 20px;
-        }
-
-        input[type="text"] {
-            padding: 10px;
-            border: 2px solid #0097dd;
-            border-radius: 8px;
-            font-size: 16px;
-            margin: 10px 0;
-            outline: none;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus {
-            border-color: #ffe604c9;
-        }
-
-        .botao {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 8px;
-            background: linear-gradient(45deg, #eeff00, #0061b1);
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-        }
-
-        .botao:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-        }
-
-        .botao:active {
-            transform: scale(0.98);
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        img {
-            width: 35%;
-            height: 35%;
-            margin-top: 0%;
-        }
-
-        .voltar {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 10;
-        }
-    </style>
-
+    <footer>© Todos os direitos reservados à TechSolutions</footer>
+    <script src="geral.js"></script>
     <script>
         async function getWeather() {
             var cidade = document.getElementById("city").value;
@@ -179,4 +54,5 @@
         }
     </script>
 </body>
+
 </html>
